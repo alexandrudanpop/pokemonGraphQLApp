@@ -8,7 +8,9 @@ const PokemonsList = ({ pokemons, incrementTake }) => (
         <Pokemon pokemon={p} />
       </div>
     ))}
-    <button onClick={incrementTake}>More</button>
+    <button className="app-button " onClick={incrementTake}>
+      More
+    </button>
   </>
 );
 
