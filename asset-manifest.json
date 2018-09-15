@@ -1,10 +1,10 @@
 {
-  "runtime~main.js": "/pokemons/static/js/runtime~main.55599017.js",
-  "runtime~main.js.map": "/pokemons/static/js/runtime~main.55599017.js.map",
-  "vendors.js": "/pokemons/static/js/vendors.63861a34.chunk.js",
-  "vendors.js.map": "/pokemons/static/js/vendors.63861a34.chunk.js.map",
-  "main.css": "/pokemons/static/css/main.4b08f141.chunk.css",
-  "main.js": "/pokemons/static/js/main.956ee083.chunk.js",
-  "main.js.map": "/pokemons/static/js/main.956ee083.chunk.js.map",
-  "index.html": "/pokemons/index.html"
+  "runtime~main.js": "/pokemonGraphQLApp/static/js/runtime~main.b235f8c1.js",
+  "runtime~main.js.map": "/pokemonGraphQLApp/static/js/runtime~main.b235f8c1.js.map",
+  "vendors.js": "/pokemonGraphQLApp/static/js/vendors.63861a34.chunk.js",
+  "vendors.js.map": "/pokemonGraphQLApp/static/js/vendors.63861a34.chunk.js.map",
+  "main.css": "/pokemonGraphQLApp/static/css/main.4b08f141.chunk.css",
+  "main.js": "/pokemonGraphQLApp/static/js/main.00c60135.chunk.js",
+  "main.js.map": "/pokemonGraphQLApp/static/js/main.00c60135.chunk.js.map",
+  "index.html": "/pokemonGraphQLApp/index.html"
 }
