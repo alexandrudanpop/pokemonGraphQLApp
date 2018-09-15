@@ -1,16 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Pokemon from "./Pokemon";
+import Loader from "./Loader";
 
-const PokemonsList = ({ pokemons, incrementTake }) => (
+const PokemonsList = ({ pokemons, incrementTake, loading }) => (
   <>
+    {loading && <Loader />}
     {pokemons.map(p => (
       <div key={p.id}>
-        <Pokemon pokemon={p} />
+        <Link
+          to={`/pokemon/${p.name}`}
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <Pokemon image={p.image} name={p.name} number={p.number} />
+        </Link>
       </div>
     ))}
-    <button className="app-button " onClick={incrementTake}>
-      More
-    </button>
+    {pokemons.length > 0 && (
+      <button className="app-button " onClick={incrementTake}>
+        More
+      </button>
+    )}
   </>
 );
 
