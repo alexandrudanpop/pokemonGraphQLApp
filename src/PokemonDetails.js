@@ -19,32 +19,6 @@ class PokemonDetails extends Component {
         number
         name
         image
-        weaknesses
-        classification
-        maxHP
-        weight {
-          minimum
-          maximum
-        }
-        height {
-          minimum
-          maximum
-        }
-        
-        attacks {
-          fast {
-            name
-            type
-            damage
-          }
-          special {
-            name
-            type
-            damage
-          }
-        }
-        fleeRate
-        maxCP
         evolutions {
           id
           number
@@ -66,7 +40,6 @@ class PokemonDetails extends Component {
       return <Loader />;
     }
 
-    console.log(pokemon);
     return (
       <>
         <h1>Evolution</h1>
