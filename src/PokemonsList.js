@@ -5,6 +5,7 @@ import Loader from "./Loader";
 
 const PokemonsList = ({ pokemons, incrementTake, loading }) => (
   <>
+    <h1>Pokemons</h1>
     {loading && <Loader />}
     {pokemons.map(p => (
       <div key={p.id}>

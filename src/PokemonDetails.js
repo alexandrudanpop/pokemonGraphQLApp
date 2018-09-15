@@ -66,13 +66,27 @@ class PokemonDetails extends Component {
       return <Loader />;
     }
 
+    console.log(pokemon);
     return (
       <>
+        <h1>Evolution</h1>
         <Pokemon
           number={pokemon.number}
           name={pokemon.name}
           image={pokemon.image}
         />
+
+        {pokemon.evolutions &&
+          pokemon.evolutions.length > 0 &&
+          pokemon.evolutions.map(e => (
+            <Pokemon
+              key={e.id}
+              number={e.number}
+              name={e.name}
+              image={e.image}
+            />
+          ))}
+
         <Link style={{ textDecoration: "none", color: "black" }} to="/">
           <button className="app-button">Back</button>
         </Link>
