@@ -3,7 +3,7 @@ import { BarLoader } from "react-spinners";
 
 const Loader = () => (
   <div className="spinner-centered">
-    <BarLoader color={"#105245"} width={2000} />
+    <BarLoader color={"green"} width={2000} />
   </div>
 );
 
