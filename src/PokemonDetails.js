@@ -16,6 +16,7 @@ class PokemonDetails extends Component {
         name: "${pokemonName}"
       ) {
         id
+        number
         name
         image
         weaknesses
