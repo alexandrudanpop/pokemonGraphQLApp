@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import PokemonApp from "./PokemonApp";
 import PokemonDetails from "./PokemonDetails";
 import "./App.css";
