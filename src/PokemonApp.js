@@ -28,9 +28,6 @@ class PokemonApp extends Component {
     }
   };
 
-  incrementTake = () =>
-    this.setState({ ...this.state, take: this.state.take + 10 });
-
   render = () => (
     <PokemonsList
       pokemons={this.state.pokemons}
