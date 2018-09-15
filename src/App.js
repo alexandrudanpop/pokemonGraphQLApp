@@ -1,20 +1,8 @@
 import React, { Component } from "react";
 import Pokemon from "./Pokemon";
+import graphQlFetch from "./graphQlFetch";
+import Loader from "./Loader";
 import "./App.css";
-
-async function graphQlFetch(query) {
-  const response = await fetch("https://graphql-pokemon.now.sh/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      query
-    })
-  });
-
-  return await response.json();
-}
 
 class App extends Component {
   state = {
@@ -54,7 +42,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.pokemons.length === 0 ? (
-          "Loading..."
+          <Loader />
         ) : (
           <>
             {this.state.pokemons.map(pokemon => (
