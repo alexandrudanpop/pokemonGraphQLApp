@@ -1,0 +1,10 @@
+{
+  "runtime~main.js": "/pokemonGraphQLApp/static/js/runtime~main.b235f8c1.js",
+  "runtime~main.js.map": "/pokemonGraphQLApp/static/js/runtime~main.b235f8c1.js.map",
+  "vendors.js": "/pokemonGraphQLApp/static/js/vendors.63861a34.chunk.js",
+  "vendors.js.map": "/pokemonGraphQLApp/static/js/vendors.63861a34.chunk.js.map",
+  "main.css": "/pokemonGraphQLApp/static/css/main.4b08f141.chunk.css",
+  "main.js": "/pokemonGraphQLApp/static/js/main.99f5e8f7.chunk.js",
+  "main.js.map": "/pokemonGraphQLApp/static/js/main.99f5e8f7.chunk.js.map",
+  "index.html": "/pokemonGraphQLApp/index.html"
+}
