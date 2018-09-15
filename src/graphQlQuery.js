@@ -1,4 +1,4 @@
-const createQuery = take => `{
+const createListQuery = take => `{
   pokemons(first: ${take}) {
     id
     number
@@ -7,4 +7,21 @@ const createQuery = take => `{
   }
 }`;
 
-export default createQuery;
+const createPokemonQuery = pokemonName => `{
+  pokemon(
+    name: "${pokemonName}"
+  ) {
+    id
+    number
+    name
+    image
+    evolutions {
+      id
+      number
+      name
+      image
+    }
+  }
+}`;
+
+export { createListQuery, createPokemonQuery };

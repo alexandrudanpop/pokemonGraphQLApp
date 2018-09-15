@@ -3,33 +3,16 @@ import { Link } from "react-router-dom";
 import graphQlFetch from "./graphQlFetch";
 import Loader from "./Loader";
 import Pokemon from "./Pokemon";
+import { createPokemonQuery } from "./graphQlQuery";
 
 class PokemonDetails extends Component {
   state = { pokemon: {}, loading: false };
 
   async componentDidMount() {
+    const pokemonName = this.props.match.params.name;
     this.setState({ ...this.state, loading: true });
 
-    const pokemonName = this.props.match.params.name;
-    const query = `{
-      pokemon(
-        name: "${pokemonName}"
-      ) {
-        id
-        number
-        name
-        image
-        evolutions {
-          id
-          number
-          name
-          image
-        }
-      }
-    }`;
-
-    const { data } = await graphQlFetch(query);
-
+    const { data } = await graphQlFetch(createPokemonQuery(pokemonName));
     this.setState({ ...this.state, pokemon: data.pokemon, loading: false });
   }
 

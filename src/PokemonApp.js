@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import graphQlFetch from "./graphQlFetch";
 import PokemonsList from "./PokemonsList";
-import createQuery from "./graphQlQuery";
+import { createListQuery } from "./graphQlQuery";
 
 class PokemonApp extends Component {
   state = {
@@ -14,21 +14,18 @@ class PokemonApp extends Component {
     await this.fetchNext();
   }
 
-  async componentDidUpdate() {
-    if (this.state.take !== this.state.pokemons.length && !this.state.loading) {
-      await this.fetchNext();
-    }
-  }
-
   fetchNext = async () => {
-    this.setState({ ...this.state, loading: true });
+    if (!this.state.loading) {
+      const nextTake = this.state.take + 10;
+      this.setState({ ...this.state, loading: true, take: nextTake });
 
-    const { data } = await graphQlFetch(createQuery(this.state.take));
-    this.setState({
-      ...this.state,
-      pokemons: data.pokemons,
-      loading: false
-    });
+      const { data } = await graphQlFetch(createListQuery(nextTake));
+      this.setState({
+        ...this.state,
+        pokemons: data.pokemons,
+        loading: false
+      });
+    }
   };
 
   incrementTake = () =>
@@ -38,7 +35,7 @@ class PokemonApp extends Component {
     <PokemonsList
       pokemons={this.state.pokemons}
       loading={this.state.loading}
-      incrementTake={this.incrementTake}
+      fetchNext={this.fetchNext}
     />
   );
 }

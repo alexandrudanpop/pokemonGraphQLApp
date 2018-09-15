@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Pokemon from "./Pokemon";
 import Loader from "./Loader";
 
-const PokemonsList = ({ pokemons, incrementTake, loading }) => (
+const PokemonsList = ({ pokemons, fetchNext, loading }) => (
   <>
     <h1>Pokemons</h1>
     {loading && <Loader />}
@@ -18,7 +18,7 @@ const PokemonsList = ({ pokemons, incrementTake, loading }) => (
       </div>
     ))}
     {pokemons.length > 0 && (
-      <button className="app-button " onClick={incrementTake}>
+      <button className="app-button " onClick={fetchNext}>
         More
       </button>
     )}
