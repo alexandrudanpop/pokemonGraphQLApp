@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import graphQlFetch from "./graphQlFetch";
 import Loader from "./Loader";
 import PokemonsList from "./PokemonsList";
+import createQuery from "./graphQlQuery";
 import "./App.css";
 
 class App extends Component {
@@ -12,45 +13,25 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    this.setState({ ...this.state, loading: true });
-
-    const query = `{
-      pokemons(first: ${this.state.take}) {
-        id
-        name
-        image
-      }
-    }`;
-
-    const res = await graphQlFetch(query);
-    this.setState({
-      ...this.state,
-      pokemons: res.data.pokemons,
-      loading: false
-    });
+    await this.fetchNext();
   }
 
   async componentDidUpdate() {
     if (this.state.take !== this.state.pokemons.length && !this.state.loading) {
-      this.setState({ ...this.state, loading: true });
-
-      const query = `{
-        pokemons(first: ${this.state.take}) {
-          id
-          name
-          image
-        }
-      }`;
-
-      const res = await graphQlFetch(query);
-
-      this.setState({
-        ...this.state,
-        pokemons: res.data.pokemons,
-        loading: false
-      });
+      await this.fetchNext();
     }
   }
+
+  fetchNext = async () => {
+    this.setState({ ...this.state, loading: true });
+
+    const { data } = await graphQlFetch(createQuery(this.state.take));
+    this.setState({
+      ...this.state,
+      pokemons: data.pokemons,
+      loading: false
+    });
+  };
 
   incrementTake = () =>
     this.setState({ ...this.state, take: this.state.take + 10 });
