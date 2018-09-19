@@ -1,4 +1,4 @@
-Site: https://alexandrudanpop.github.io/pokemonGraphQLApp
+Live App: https://alexandrudanpop.github.io/pokemonGraphQLApp
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
